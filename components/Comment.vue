@@ -29,13 +29,13 @@ defineProps({
     </div>
 
     <!-- Content -->
-    <div class="flex-1 min-w-0 p-2 bg-gray-800 border-px border-gray-700 rounded-md">
+    <div class="flex-1 min-w-0 p-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md">
       <!-- Header -->
       <div class="flex items-center gap-2 mb-1">
-        <span class="text-sm font-medium">{{ name || username }}</span>
-        <span class="text-sm text-gray-500">@{{ username }}</span>
-        <span class="text-sm text-gray-400">•</span>
-        <span class="text-sm text-gray-500">{{ timeAgo }}</span>
+        <span class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ name || username }}</span>
+        <span class="text-sm text-gray-600 dark:text-gray-500">@{{ username }}</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400">·</span>
+        <span class="text-sm text-gray-600 dark:text-gray-500">{{ timeAgo }}</span>
 
         <!-- Role badges -->
         <div class="flex gap-1 ml-auto">
@@ -44,13 +44,13 @@ defineProps({
           </span>
           <div class="flex gap-1">
             <!-- Action buttons -->
-            <button class="p-1 text-gray-400 hover:text-gray-600 rounded w-6 h-6 flex items-center justify-center">
+            <button class="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded w-6 h-6 flex items-center justify-center">
               <heroicons-share />
             </button>
-            <button class="p-1 text-gray-400 hover:text-gray-600 rounded w-6 h-6 flex items-center justify-center">
+            <button class="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded w-6 h-6 flex items-center justify-center">
               <heroicons-arrow-uturn-left />
             </button>
-            <button class="p-1 text-gray-400 hover:text-gray-600 rounded w-6 h-6 flex items-center justify-center">
+            <button class="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded w-6 h-6 flex items-center justify-center">
               <heroicons-ellipsis-horizontal />
             </button>
           </div>
@@ -58,7 +58,7 @@ defineProps({
       </div>
 
       <!-- Comment content -->
-      <div class="text-sm comment-content">
+      <div class="text-sm comment-content text-gray-800 dark:text-gray-200">
         <slot name="comment"></slot>
       </div>
     </div>
@@ -77,5 +77,9 @@ defineProps({
 /* Hover effects */
 button:hover {
   background-color: #f3f4f6;
+}
+
+:global(.dark) button:hover {
+  background-color: #374151;
 }
 </style>
